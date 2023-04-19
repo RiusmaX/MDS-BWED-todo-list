@@ -52,5 +52,16 @@ class Database
       throw new Exception($e->getMessage());
     }
   }
+
+  public function delete($query = "", $params = [])
+  {
+    try {
+      $statement = $this->connection->prepare($query);
+      $result = $statement->execute($params);
+      return $result;
+    } catch (Exception $e) {
+      throw new Exception($e->getMessage());
+    }
+  }
 }
 ?>
