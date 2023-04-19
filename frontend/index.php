@@ -8,6 +8,9 @@
 </head>
 <body>
     <h1>Bienvenue dans l'application de Todo List</h1>
+
+    <?php include './templates/todos-list.php' ?>
+    
     <form method='POST' action='../backend/api/create-todo.php'>
       <label>
         Titre :
