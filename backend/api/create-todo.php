@@ -1,21 +1,17 @@
 <?php
   include '../classes/Database.php';
 
+  var_dump($_POST);
+
   $db = new Database();
 
-  $query = "INSERT INTO `todos`(
-    `id`,
-    `title`,
-    `content`,
-    `created_at`,
-    `updated_at`,
-    `deadline`,
-    `is_done`
-)
-VALUES(
-    NULL,
-    'Mon deuxième TODO',
-    'BlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablablaBlablablabla',
-    CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP(), NULL, '0');";
+  $query = "INSERT INTO todos (title, content) VALUES(?, ?);";
+
+  $title = $_POST['title'];
+  $content = $_POST['content'];
+
+  $db->insert($query, [$title, $content]);
+
+  echo 'OK';
 
 ?>

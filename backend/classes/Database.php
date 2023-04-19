@@ -41,5 +41,15 @@ class Database
       throw new Exception($e->getMessage());
     }
   }
+
+  public function insert($query = "", $params = [])
+  {
+    try {
+      $statement = $this->connection->prepare($query);
+      $statement->execute($params);
+    } catch (Exception $e) {
+      throw new Exception($e->getMessage());
+    }
+  }
 }
 ?>
