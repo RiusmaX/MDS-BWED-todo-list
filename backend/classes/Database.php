@@ -46,7 +46,8 @@ class Database
   {
     try {
       $statement = $this->connection->prepare($query);
-      $statement->execute($params);
+      $result = $statement->execute($params);
+      return $result;
     } catch (Exception $e) {
       throw new Exception($e->getMessage());
     }

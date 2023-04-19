@@ -10,8 +10,7 @@
   $title = $_POST['title'];
   $content = $_POST['content'];
 
-  $db->insert($query, [$title, $content]);
+  $result = $db->insert($query, [$title, $content]);
 
-  echo 'OK';
-
+  echo json_encode($result);
 ?>
