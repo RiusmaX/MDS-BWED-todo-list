@@ -3,10 +3,9 @@
 
   $db = new Database();
 
-  $users = $db->select("SELECT * FROM users");
+  $todos = $db->select("SELECT * FROM todos");
 
-  echo json_encode($users);
+  echo json_encode($todos);
 
   exit();
-
 ?>

@@ -8,5 +8,18 @@
 </head>
 <body>
     <h1>Bienvenue dans l'application de Todo List</h1>
+    <form method='POST' action='../backend/api/create-todo.php'>
+      <label>
+        Titre :
+        <input name='title' />
+      </label>
+      <br />
+      <label>
+        Texte :
+        <textarea name='content'></textarea>
+      </label>
+      <br />
+      <input type="submit" value='Ajouter le todo' />
+    </form>
 </body>
 </html>
